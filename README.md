@@ -10,7 +10,9 @@
 
 * kubectl config set-context --current --namespace=firstrun
 
-* cat <<EOF | kubectl apply -f -
+* Hello-Pod erstellen
+```
+cat <<EOF | kubectl apply -f -
 	apiVersion: v1
 	kind: Pod
 	metadata:
@@ -26,10 +28,12 @@
 		ports:
 		- containerPort: 8080
 	EOF
-
+```
 * kubectl describe pod hello-pod
 
-* cat <<EOF | kubectl apply -f -
+* Hello-Pod-Service erstellen
+```
+cat <<EOF | kubectl apply -f -
 apiVersion: v1
 kind: Service
 metadata:
@@ -44,7 +48,7 @@ spec:
   selector:
     app: web
 EOF
-
+```
 * kubectl get svc
 
 * kubectl describe svc svc-np
@@ -53,7 +57,13 @@ EOF
 
 * kubectl delete pod hello-pod
 
-* cat <<EOF | kubectl apply -f -
+* Fertig!
+
+## Backup
+
+* Deployment erstellen
+```
+cat <<EOF | kubectl apply -f -
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -82,3 +92,4 @@ spec:
         ports:
         - containerPort: 8080
 EOF
+```

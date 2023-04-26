@@ -13,20 +13,20 @@
 * Hello-Pod erstellen
 ```
 cat <<EOF | kubectl apply -f -
-	apiVersion: v1
-	kind: Pod
-	metadata:
-	  name: hello-pod
-	  labels:
-		app: web
-		zone: prod
-		version: v1
-	spec:
-	  containers:
-	  - name: hello-ctr
-		image: nigelpoulton/k8sbook:latest
-		ports:
-		- containerPort: 8080
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hello-pod
+  labels:
+    app: web
+    zone: prod
+    version: v1
+spec:
+  containers:
+  - name: hello-ctr
+    image: nigelpoulton/k8sbook:latest
+    ports:
+    - containerPort: 8080
 	EOF
 ```
 * kubectl describe pod hello-pod

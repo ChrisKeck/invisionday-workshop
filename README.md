@@ -28,7 +28,7 @@ spec:
     ports:
     - containerPort: 8080
 	EOF
-```
+``` 
 * kubectl describe pod hello-pod
 
 * Hello-Pod-Service erstellen
